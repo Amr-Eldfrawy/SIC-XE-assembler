@@ -1,0 +1,150 @@
+                                                          PASS 1
+                                                        ..........
+
+
+
+LineNo              Adress               Label             Op-code                       Operand             
+
+
+    0                                                                                                       
+    0                                            .2345678901234567890123 
+    1                   0                copy               start                             0             
+    2                   0               first                 stl                        retadr             
+    3                   3                                     ldb                       #length             
+    4                   6               cloop               +jsub                         rdrec             
+    5                   a                                     lda                        length             
+    6                   d                                    comp                            #0             
+    7                  10                                     jeq                        endfil             
+    8                  13                                   +jsub                         wrrec             
+    9                  17                                       j                         cloop             
+   10                  1a              endfil                 lda                           eof             
+   11                  1d                                     sta                        buffer             
+   12                  20                                     lda                            #3             
+   13                  23                                     sta                        length             
+   14                  26                                   +jsub                         wrrec             
+   15                  2a                                       j                       @retadr             
+   16                  2d                 eof                byte                        C'EOF'             
+   17                  30              retadr                resw                             1             
+   18                  33              length                resw                             1             
+   19                  36              buffer                resb                          4096             
+   20                1036               rdrec               clear                             x             
+   21                1038                                   clear                             a             
+   22                103a                                   clear                             s             
+   23                103c                                    +ldt                         #4096             
+   24                1040               rloop                  td                         input             
+   25                1043                                     jeq                         rloop             
+   26                1046                                      rd                         input             
+   27                1049                                   compr                           a,s             
+   28                104b                                     jeq                          exit             
+   29                104e                                    stch                      buffer,x             
+   30                1051                                    tixr                             t             
+   31                1053                                     jlt                         rloop             
+   32                1056                exit                 stx                        length             
+   33                1059                                    rsub                                           
+   34                105c               input                byte                         x'f1'             
+   35                105d               wrrec               clear                             x             
+   36                105f                                     ldt                        length             
+   37                1062               wloop                  td                        output             
+   38                1065                                     jeq                         wloop             
+   39                1068                                    ldch                      buffer,x             
+   40                106b                                      wd                        output             
+   41                106e                                    tixr                             t             
+   42                1070                                     jlt                         wloop             
+   43                1073                                    rsub                                           
+   44                1076              output                byte                         x'05'             
+   45                1077                                     end                                           
+
+
+
+
+
+
+                     *********************Symbol Table********************
+
+              Symbol             |                      Address
+     ****************************|*******************************
+              buffer             |                           36
+               cloop             |                            6
+              endfil             |                           1a
+                 eof             |                           2d
+                exit             |                         1056
+               first             |                            0
+               input             |                         105c
+              length             |                           33
+              output             |                         1076
+               rdrec             |                         1036
+              retadr             |                           30
+               rloop             |                         1040
+               wloop             |                         1062
+               wrrec             |                         105d
+
+
+
+
+
+
+
+                                                          PASS 2
+                                                        ..........
+
+
+
+LineNo              Adress               Label             Op-code                       Operand             ObjectCode
+
+
+    0                                                                                                       
+    0                                            .2345678901234567890123 
+    1                   0                copy               start                             0             
+    2                   0               first                 stl                        retadr                 17202d
+    3                   3                                     ldb                       #length                 69202d
+    4                   6               cloop               +jsub                         rdrec               4b101036
+    5                   a                                     lda                        length                 032026
+    6                   d                                    comp                            #0                 290000
+    7                  10                                     jeq                        endfil                 332007
+    8                  13                                   +jsub                         wrrec               4b10105d
+    9                  17                                       j                         cloop                 3f2fec
+   10                  1a              endfil                 lda                           eof                 032010
+   11                  1d                                     sta                        buffer                 0f2016
+   12                  20                                     lda                            #3                 010003
+   13                  23                                     sta                        length                 0f200d
+   14                  26                                   +jsub                         wrrec               4b10105d
+   15                  2a                                       j                       @retadr                 3e2003
+   16                  2d                 eof                byte                        C'EOF'                 454f46
+   17                  30              retadr                resw                             1             
+   18                  33              length                resw                             1             
+   19                  36              buffer                resb                          4096             
+   20                1036               rdrec               clear                             x                   b410
+   21                1038                                   clear                             a                   b400
+   22                103a                                   clear                             s                   b440
+   23                103c                                    +ldt                         #4096               75101000
+   24                1040               rloop                  td                         input                 e32019
+   25                1043                                     jeq                         rloop                 332ffa
+   26                1046                                      rd                         input                 db2013
+   27                1049                                   compr                           a,s                   a004
+   28                104b                                     jeq                          exit                 332008
+   29                104e                                    stch                      buffer,x                 57c003
+   30                1051                                    tixr                             t                   b850
+   31                1053                                     jlt                         rloop                 3b2fea
+   32                1056                exit                 stx                        length                 134000
+   33                1059                                    rsub                                               4f0000
+   34                105c               input                byte                         x'f1'                     f1
+   35                105d               wrrec               clear                             x                   b410
+   36                105f                                     ldt                        length                 774000
+   37                1062               wloop                  td                        output                 e32011
+   38                1065                                     jeq                         wloop                 332ffa
+   39                1068                                    ldch                      buffer,x                 53c003
+   40                106b                                      wd                        output                 df2008
+   41                106e                                    tixr                             t                   b850
+   42                1070                                     jlt                         wloop                 3b2fef
+   43                1073                                    rsub                                               4f0000
+   44                1076              output                byte                         x'05'                     05
+   45                1077                                     end                                           
+
+
+
+
+
+
+
+                     *********************pass2 errors********************
+

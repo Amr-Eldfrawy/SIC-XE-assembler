@@ -1,0 +1,9 @@
+.2345678901234567890123
+PROB2    START   1000
+         LDA     ALPHA
+         ADD     BETA
+         STA     GAMMA
+ALPHA    RESW    3
+BETA     RESW    2
+GAMMA    RESW    1
+         END

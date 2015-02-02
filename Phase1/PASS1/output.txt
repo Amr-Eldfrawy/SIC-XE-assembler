@@ -1,0 +1,24 @@
+LineNo              Adress               Label             Op-code                       Operand             Comment
+
+    0                                                                                                       .2345678901234567890123 
+    1                1000               prob2               start                          1000             
+    2                1000                                     lda                         alpha             
+    3                1003                                     add                          beta             
+    4                1006                                     sta                         gamma             
+    5                1009               alpha                resw                             3             
+    6                1012                beta                resw                             2             
+    7                1018               gamma                resw                             1             
+    8                101b                                     end                                           
+
+
+
+
+
+
+                     *********************Symbol Table********************
+
+              Symbol             |                      Address
+     ****************************|*******************************
+               alpha             |                         1009
+                beta             |                         1012
+               gamma             |                         1018

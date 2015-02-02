@@ -1,0 +1,83 @@
+                                                          PASS 1
+                                                        ..........
+
+
+
+LineNo              Adress               Label             Op-code                       Operand             
+
+
+    0                                                                                                       
+    0                                            .2345678901234567890123 
+    1                1000               prob2               start                          1000             
+    2                1000                                     ldx                         initl             
+    3                1003                loop                 lds                          zero             
+    4                1006                                     sts                       array,x             
+    5                1009                                     tix                         -1000             
+    6                100c                                     lda                    array-zero             
+    7                100f                                     lda                     nfksnfskb             
+    8                1012                                     jlt                          loop             
+    9                1015               array                resw                           100             
+   10                1141                zero                word                             0             
+   11                1144               initl                word                             0             
+   12                1147                test                word                           100             
+   13                114a                                     end                                           
+
+
+
+
+
+
+                     *********************Symbol Table********************
+
+              Symbol             |                      Address
+     ****************************|*******************************
+               array             |                         1015
+               initl             |                         1144
+                loop             |                         1003
+                test             |                         1147
+                zero             |                         1141
+
+
+
+
+
+
+
+                                                          PASS 2
+                                                        ..........
+
+
+
+LineNo              Adress               Label             Op-code                       Operand             ObjectCode
+
+
+    0                                                                                                       
+    0                                            .2345678901234567890123 
+    1                1000               prob2               start                          1000             
+    2                1000                                     ldx                         initl                 072141
+    3                1003                loop                 lds                          zero                 6f213b
+    4                1006                                     sts                       array,x                 7fa00c
+    5                1009                                     tix                         -1000             
+                                            ****Error: invalid expression
+    6                100c                                     lda                    array-zero             
+                                            ****Error: negative address
+    7                100f                                     lda                     nfksnfskb             
+                                            ****Error: undefined symbol
+    8                1012                                     jlt                          loop                 3b2fee
+    9                1015               array                resw                           100             
+   10                1141                zero                word                             0                      0
+   11                1144               initl                word                             0                      0
+   12                1147                test                word                           100                      0
+   13                114a                                     end                                           
+
+
+
+
+
+
+
+                     *********************pass2 errors********************
+
+line number : 5 ,error: ****Error: invalid expression
+line number : 6 ,error: ****Error: negative address
+line number : 7 ,error: ****Error: undefined symbol

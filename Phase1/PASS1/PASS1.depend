@@ -1,0 +1,41 @@
+# depslib dependency file v1.0
+1400376214 source:c:\users\shiko\codeblocks workspace\pass1\main.cpp
+	<fstream>
+	<string>
+	<iostream>
+	<stdio.h>
+	<vector>
+	<cstring>
+	<algorithm>
+	<set>
+	<map>
+	<queue>
+	<stack>
+	"Utilities.h"
+	<math.h>
+
+1400375918 c:\users\shiko\codeblocks workspace\pass1\include\utilities.h
+	<fstream>
+	<string>
+	<iostream>
+	<stdio.h>
+	<vector>
+	<cstring>
+	<algorithm>
+	<set>
+	<map>
+	<queue>
+	<stack>
+	<math.h>
+	"Entry.h"
+
+1400375073 c:\users\shiko\codeblocks workspace\pass1\include\entry.h
+	<string>
+	<cstring>
+
+1400375082 source:c:\users\shiko\codeblocks workspace\pass1\src\entry.cpp
+	"Entry.h"
+
+1400375895 source:c:\users\shiko\codeblocks workspace\pass1\src\utilities.cpp
+	"Utilities.h"
+

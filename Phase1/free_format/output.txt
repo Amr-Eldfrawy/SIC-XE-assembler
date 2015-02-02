@@ -1,0 +1,41 @@
+LineNo              Adress               Label             Op-code                       Operand             Comment
+
+    0                 ô>                                                                                   .12345678912345678912345678912345678 
+    1                1000               prob2               start                          1000             
+    2                1000                                     ldx                         initl             
+    3                1003                loop                 lds                          zero             
+    4                1006                                     sts                       array,x             
+    5                1009                                     tix                          test             
+    6                100c                                     jlt                          loop             
+    7                100f               array                resw                           100             
+    8                113b                zero                word                            -5             
+    9                113e               initl                word                            #3             
+   10                1141                test                word                         lknll             
+                                            ****Error: Invalid Operand
+   11                1141                 str                byte                      c'jbkbk'             
+   12                1146               first                word                         @-646             
+   13                1149              second                byte                    x'4564hjk'             
+                                            ****Error: Invalid Operand
+   14                1149               third                byte                       x'454a'             
+   15                114b               third                word                             3             
+                                            ****Error: Duplicate Symbol
+   16                1150                                     end                                           
+
+
+
+
+
+
+                     *********************Symbol Table********************
+
+              Symbol             |                      Address
+     ****************************|*******************************
+               array             |                         100f
+               first             |                         1146
+               initl             |                         113e
+                loop             |                         1003
+              second             |                         1149
+                 str             |                         1141
+                test             |                         1141
+               third             |                         1149
+                zero             |                         113b

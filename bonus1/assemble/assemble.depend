@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1401577059 source:c:\users\dell\desktop\assembler\bonus1\assemble\main.cpp
+	<fstream>
+	<string>
+	<iostream>
+	<stdio.h>
+	<vector>
+	<cstring>
+	<algorithm>
+	<set>
+	<map>
+	<queue>
+	<stack>
+	<math.h>
+	<sstream>
+

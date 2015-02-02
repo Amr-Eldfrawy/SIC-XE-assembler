@@ -1,0 +1,19 @@
+.12345678912345678912345678912345678
+PROB2    START   1000
+         LDX     INITL
+LOOP          LDS     ZERO
+      STS     ARRAY,X     
+         TIX     TEST               
+            JLT     LOOP
+
+
+ARRAY       RESW    100
+ZERO            WORD    -5
+INITL    WORD         #3
+TEST     WORD    lknll
+STR    BYTE       C'JBKBK'
+FIRST    WORD    @-646
+SECOND          BYTE    X'4564HJK'
+THIRD    BYTE    X'454A'
+THIRD    WORD    3 
+             END
