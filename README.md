@@ -24,29 +24,32 @@ Parsing process handles the following:
 -The parser is to handle all storage directives (BYTE, WORD, RESW, and RESB).
 
 -Output
--a) The symbol table.
--b) The source program in a format similar to a listing file ,also A meaningful error message is printed below the line in which an error occurred.
+o a) The symbol table.
+o b) The source program in a format similar to a listing file ,also A meaningful error message is printed below the line in which an error occurred.
 
 -phase 2
--It is required to implement Phase-2 of a (cross) Assembler for (a subset of) SIC/XE machines.
+o It is required to implement Phase-2 of a (cross) Assembler for (a subset of) SIC/XE machines.
 Phase-2 specification requires the following:
 
 -1) Input:
--Source file name "src.txt" via a (.exe).
+
+o Source file name "src.txt" via a (.exe).
 
 -2) Process:
--The input source file is parsed in order to produce pass-1, after that the symbol table produced in phase-1 is used while forming phase-2 assembled file and object code.
--The assembler for phase-2 should support:
--1. EQU and ORG statements.
--2. Simple expression evaluation. A simple expression includes simple (A
+
+o The input source file is parsed in order to produce pass-1, after that the symbol table produced in phase-1 is used while forming phase-2 assembled file and object code.
+
+The assembler for phase-2 should support:
+o 1. EQU and ORG statements.
+o 2. Simple expression evaluation. A simple expression includes simple (A
 <op> B) operand arithmetic, where <op> is one of +,-,*,/ and no spaces
 surround the operation, eg. A+B.
 
 -3) Output:
--The output of the assembler should include (at least):
--1. Object-code file whose format is the same as the one described in the text
+o The output of the assembler should include (at least):
+o 1. Object-code file whose format is the same as the one described in the text
 book in section 2.1.1 and 2.3.5.
--2. A report at the end of pass2.
+o 2. A report at the end of pass2.
 Pass1 and Pass2 errors should be included as
 part of the assembler report, exhibiting both the offending line of source code and the error.
 
