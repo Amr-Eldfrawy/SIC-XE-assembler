@@ -3,13 +3,16 @@ A cross assembler for a subset of the SIC/XE assembler, written in C/C++, produc
 
 #Requirement Specification:
 -Phase 1
+
 It is required to implement Phase-1 of a (cross) Assembler for (a subset of) SIC/XE machines.
 Phase-1 specification requires that an entity is to be designed as follows:
 
 1)Input
+
 Source file name "src.txt" via a (.exe).
 
 2)Process
+
 The input source file is parsed in order to produce the output.
 Parsing process handles the following:
 a) Source lines that are (instructions, storage declarations, comments, and assembler directives).
@@ -23,8 +26,8 @@ c) For instructions, the parser is to minimally be capable of decoding 2, 3 and 
  The parser is to handle all storage directives (BYTE, WORD, RESW, and RESB).
 
 -Output
-a) The symbol table.
 
+a) The symbol table.
 b) The source program in a format similar to a listing file ,also A meaningful error message is printed below the line in which an error occurred.
 
 -phase 2
@@ -32,9 +35,11 @@ It is required to implement Phase-2 of a (cross) Assembler for (a subset of) SIC
 Phase-2 specification requires the following:
 
 1) Input:
+
 Source file name "src.txt" via a (.exe).
 
 2) Process:
+
 The input source file is parsed in order to produce pass-1, after that the symbol table produced in phase-1 is used while forming phase-2 assembled file and object code.
 The assembler for phase-2 should support:
 1. EQU and ORG statements.
@@ -43,15 +48,13 @@ The assembler for phase-2 should support:
 surround the operation, eg. A+B.
 
 3) Output:
+
 The output of the assembler should include (at least):
 1. Object-code file whose format is the same as the one described in the text
 book in section 2.1.1 and 2.3.5.
 2. A report at the end of pass2.
 Pass1 and Pass2 errors should be included as
 part of the assembler report, exhibiting both the offending line of source code and the error.
-
- 
-
 
 #Design
 -Pass-1 assembler:
